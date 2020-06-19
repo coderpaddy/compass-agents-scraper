@@ -15,9 +15,9 @@ class Agent:
         facebook = self.main_soup.select('a[href*="facebook.com/"]')[0].attrs["href"],
         instagram = self.main_soup.select('a[href*="instagram.com/"]')[0].attrs["href"]
         if phone is None:
-            phone = phone[0].attrs["href"].replace("tel:", "")
-        else:
             phone = "None"
+        else:
+            phone = phone[0].attrs["href"].replace("tel:", "")
         if isinstance(facebook, tuple):
             facebook = facebook[0]
         if isinstance(instagram, tuple):
