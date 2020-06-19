@@ -12,14 +12,27 @@
  ```
 
 # Usage
- ```
- python scrape.py
+ * Single Zip Code
+    ```
+    python scrape.py
 
- >>Please enter a zip to search ie 10010:
+    >>Please enter a zip to search ie 10010:
 
- >> 10010
- ```
+    >> 10010
+    ```
 
- Program will count total agents, and count through progress
+    Program will count total agents, and count through progress
 
- CSV will be saved as {zip_code}-agents.csv
+    CSV will be saved as {zip_code}-agents.csv
+
+ * All zip codes
+    ```
+    python scrape_all.py
+    >> all_agents.csv
+    ```
+    
+    clean when finished if you want (remove duplicates and placeholder urls)
+    ```
+    python clean.py
+    >> all_agents_cleaned.csv
+    ```

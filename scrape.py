@@ -1,9 +1,10 @@
-import agent
 import csv
+import math
 import time
+
+import agent
 from id_get import get_location_id
 from ScraperTools import tools
-import math
 
 zip_to_search = input(" Please enter a zip to search ie 10010: ")
 location_id = get_location_id(zip_to_search)

@@ -1,5 +1,7 @@
-import requests
 import json
+
+import requests
+
 
 def get_location_id(query):
     url = 'https://www.compass.com/api/v3/omnisuggest/autocomplete'
@@ -16,10 +18,10 @@ def get_location_id(query):
     }
     r = requests.post(url, data=json.dumps(body), headers=headers)
     pretty_data = json.loads(r.text)
-    # print(pretty_data["categories"][0]["items"][0])
-    return pretty_data["categories"][0]["items"][0]["id"]
+    if "categories" not in pretty_data.keys():
+        return False
+    else:
+        return pretty_data["categories"][0]["items"][0]["id"]
 
 if __name__ == "__main__":
     mine = get_location_id("08629")
-    print(mine)
-
